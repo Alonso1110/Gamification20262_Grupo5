@@ -88,9 +88,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.b
+      value: 0.46820262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.g
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5921569
+      objectReference: {fileID: 0}
     - target: {fileID: 5775023054165835697, guid: 285382d2209fce04387bd393e5a07077, type: 3}
       propertyPath: m_Name
-      value: ItemIngredient
+      value: Prefab_Meow03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

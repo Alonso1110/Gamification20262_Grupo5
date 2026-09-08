@@ -92,6 +92,18 @@ PrefabInstance:
       propertyPath: ingredientID
       value: Meow01
       objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.g
+      value: 0.42352942
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652722084280661711, guid: 285382d2209fce04387bd393e5a07077, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4323616
+      objectReference: {fileID: 0}
     - target: {fileID: 5775023054165835697, guid: 285382d2209fce04387bd393e5a07077, type: 3}
       propertyPath: m_Name
       value: Prefab_Meow01
