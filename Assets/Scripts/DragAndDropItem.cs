@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("UI Configuration")]
@@ -11,11 +11,12 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [Header("Drag Settings")]
     [Range(0.1f, 1f)]
     [SerializeField] private float dragAlpha = 0.6f;
-    [SerializeField] private bool returnToOrigin = true;
+    [SerializeField] private bool isSpawner = true;
 
     private RectTransform rectTransform;
     private Vector2 startPosition;
     private Transform originalParent;
+    private bool isLockedInPlate = false;
 
     private void Awake()
     {
@@ -34,17 +35,33 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (isLockedInPlate) return;
+
+        if (isSpawner)
+        {
+            GameObject clone = Instantiate(gameObject, mainCanvas.transform);
+
+            DragAndDropItem cloneDrag = clone.GetComponent<DragAndDropItem>();
+            cloneDrag.isSpawner = false;
+            cloneDrag.mainCanvas = mainCanvas;
+
+            eventData.pointerDrag = clone;
+            cloneDrag.OnBeginDrag(eventData);
+
+            return;
+        }
+
         startPosition = rectTransform.anchoredPosition;
         originalParent = transform.parent;
 
         canvasGroup.alpha = dragAlpha;
         canvasGroup.blocksRaycasts = false;
-
-        Debug.Log("Inicio de arrastre: " + gameObject.name);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (isLockedInPlate || isSpawner) return;
+
         if (mainCanvas != null)
         {
             rectTransform.anchoredPosition += eventData.delta / mainCanvas.scaleFactor;
@@ -53,13 +70,20 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (isLockedInPlate || isSpawner) return;
+
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
 
-        if (returnToOrigin && transform.parent == originalParent)
+        if (transform.parent == mainCanvas.transform)
         {
-            rectTransform.anchoredPosition = startPosition;
-            Debug.Log("Objeto devuelto al origen: " + gameObject.name);
+            Destroy(gameObject);
         }
+    }
+
+    public void LockInPlace()
+    {
+        isLockedInPlate = true;
+        canvasGroup.blocksRaycasts = true;
     }
 }
