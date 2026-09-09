@@ -37,6 +37,8 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (gameObject == null || !gameObject.activeInHierarchy) return;
+
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
 
