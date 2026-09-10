@@ -25,6 +25,11 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         canvasGroup.alpha = 0.7f;
         canvasGroup.blocksRaycasts = false;
+
+        if (TryGetComponent<ConveyorPlate>(out ConveyorPlate conveyor))
+        {
+            conveyor.OnPickupPlate();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,6 +48,11 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         canvasGroup.blocksRaycasts = true;
 
         rectTransform.anchoredPosition = startPosition;
+
+        if (TryGetComponent<ConveyorPlate>(out ConveyorPlate conveyor))
+        {
+            conveyor.OnReleasePlate();
+        }
     }
 
     public void ClearPlate()

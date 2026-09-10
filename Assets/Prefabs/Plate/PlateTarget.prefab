@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3757184059722644886}
   - component: {fileID: 6750451748975528416}
   - component: {fileID: 4485494793838677091}
+  - component: {fileID: -54911928526443237}
   m_Layer: 5
   m_Name: PlateTarget
   m_TagString: Untagged
@@ -114,3 +115,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85993cb1991e8844b61b6a383e48170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlateDraggable
+--- !u!114 &-54911928526443237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205439521100951592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d718e8dcb9fd74498ef5f5331e521cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorPlate
+  moveSpeed: 150
+  endPositionX: 1980
+  canvasGroup: {fileID: 6750451748975528416}
