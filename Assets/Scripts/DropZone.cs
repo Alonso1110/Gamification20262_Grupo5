@@ -9,16 +9,15 @@ public class DropZone : MonoBehaviour, IDropHandler
 
         if (droppedObject != null)
         {
-            droppedObject.transform.SetParent(transform);
-
-            if (droppedObject.TryGetComponent<DragAndDropItem>(out DragAndDropItem dragScript))
+            if (droppedObject.TryGetComponent<DraggableIngredient>(out DraggableIngredient dragScript))
             {
+                droppedObject.transform.SetParent(transform);
                 dragScript.LockInPlace();
-            }
 
-            if (droppedObject.TryGetComponent<Ingredient>(out Ingredient ingredient))
-            {
-                Debug.Log("Ingrediente fijado en el plato: " + ingredient.IngredientID);
+                if (droppedObject.TryGetComponent<Ingredient>(out Ingredient ingredient))
+                {
+                    Debug.Log("Ingrediente fijado en el plato: " + ingredient.IngredientID);
+                }
             }
         }
     }
