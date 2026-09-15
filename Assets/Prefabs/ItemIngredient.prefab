@@ -104,8 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DragAndDropItem
   mainCanvas: {fileID: 0}
   canvasGroup: {fileID: 1478483165049018593}
-  dragAlpha: 0.6
-  returnToOrigin: 1
+  dragAlpha: 0.8
+  isSpawner: 1
 --- !u!114 &3432130633467676389
 MonoBehaviour:
   m_ObjectHideFlags: 0
