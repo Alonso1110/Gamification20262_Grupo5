@@ -5,18 +5,33 @@ public class DropZone : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        GameObject droppedObject = eventData.pointerDrag;
+        DraggableIngredient draggedIngredient = eventData.pointerDrag?.GetComponent<DraggableIngredient>();
+        if (draggedIngredient == null) return;
 
-        if (droppedObject != null)
+        Ingredient ingredientData = draggedIngredient.GetComponent<Ingredient>();
+        if (ingredientData == null) return;
+
+        string id = ingredientData.IngredientID.ToLower();
+
+        if (id.Contains("rice") || id.Contains("arroz") || id.Contains("chaufa"))
         {
-            if (droppedObject.TryGetComponent<DraggableIngredient>(out DraggableIngredient dragScript))
+            PlateRiceOverlay riceOverlay = GetComponent<PlateRiceOverlay>();
+            if (riceOverlay != null)
             {
-                droppedObject.transform.SetParent(transform);
-                dragScript.LockInPlace();
-
-                if (droppedObject.TryGetComponent<Ingredient>(out Ingredient ingredient))
+                if (!riceOverlay.ServeRice(draggedIngredient.gameObject))
                 {
-                    Debug.Log("Ingrediente fijado en el plato: " + ingredient.IngredientID);
+                    Destroy(draggedIngredient.gameObject);
+                }
+            }
+        }
+        else if (id.Contains("salad") || id.Contains("ensalada"))
+        {
+            PlateSaladOverlay saladOverlay = GetComponent<PlateSaladOverlay>();
+            if (saladOverlay != null)
+            {
+                if (!saladOverlay.ServeSalad(draggedIngredient.gameObject))
+                {
+                    Destroy(draggedIngredient.gameObject);
                 }
             }
         }

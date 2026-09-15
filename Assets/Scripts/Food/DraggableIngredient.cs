@@ -47,7 +47,8 @@ public class DraggableIngredient : MonoBehaviour, IBeginDragHandler, IDragHandle
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 1.0f;
-            canvasGroup.blocksRaycasts = true;
+            canvasGroup.blocksRaycasts = false;
         }
+        this.enabled = false;
     }
 }
