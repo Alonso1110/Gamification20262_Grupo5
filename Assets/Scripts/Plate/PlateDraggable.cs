@@ -57,9 +57,25 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void ClearPlate()
     {
-        foreach (Transform child in transform)
+        PlateRiceOverlay rice = GetComponent<PlateRiceOverlay>();
+        if (rice != null) rice.ClearRice();
+
+        PlateFriesOverlay fries = GetComponent<PlateFriesOverlay>();
+        if (fries != null) fries.ClearFries();
+
+        PlateSaladOverlay salad = GetComponent<PlateSaladOverlay>();
+        if (salad != null) salad.ClearSalad();
+
+        PlateSauceOverlay sauce = GetComponent<PlateSauceOverlay>();
+        if (sauce != null)
         {
-            Destroy(child.gameObject);
+            sauce.ClearSauces();
         }
+
+        PlateChickenOverlay chicken = GetComponent<PlateChickenOverlay>();
+        if (chicken != null) chicken.ClearChicken();
+
+
+        Debug.Log("El plato se ha vaciado por completo");
     }
 }

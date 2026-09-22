@@ -35,5 +35,17 @@ public class DropZone : MonoBehaviour, IDropHandler
                 }
             }
         }
+
+        else if (id.Contains("chicken") || id.Contains("pollo") || id.Contains("quarter") || id.Contains("half"))
+        {
+            PlateChickenOverlay chickenOverlay = GetComponent<PlateChickenOverlay>();
+            if (chickenOverlay != null)
+            {
+                if (!chickenOverlay.ServeChicken(draggedIngredient.gameObject))
+                {
+                    Destroy(draggedIngredient.gameObject);
+                }
+            }
+        }
     }
 }

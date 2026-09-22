@@ -7,19 +7,27 @@ public class TrashCan : MonoBehaviour, IDropHandler
     {
         GameObject droppedObject = eventData.pointerDrag;
 
-        if (droppedObject != null)
+        if (droppedObject == null) return;
+
+        if (droppedObject.TryGetComponent<PlateDraggable>(out PlateDraggable plate))
         {
-            if (droppedObject.TryGetComponent<PlateDraggable>(out PlateDraggable plate))
+            plate.ClearPlate();
+            Debug.Log("Se limpiaron todas las guarniciones y salsas del plato");
+        }
+
+        else if (droppedObject.GetComponent<DeepFryer>() != null)
+        {
+            return;
+        }
+        else
+        {
+            if (droppedObject.TryGetComponent<DraggableIngredient>(out DraggableIngredient dragScript))
             {
-                plate.ClearPlate();
-                Debug.Log("Ingredientes del plato eliminados en la basura");
+                dragScript.LockInPlace();
             }
 
-            else
-            {
-                Destroy(droppedObject);
-                Debug.Log("Ingrediente suelto eliminado en la basura");
-            }
+            Destroy(droppedObject);
+            Debug.Log("Ingrediente suelto eliminado en el tacho");
         }
     }
 }
