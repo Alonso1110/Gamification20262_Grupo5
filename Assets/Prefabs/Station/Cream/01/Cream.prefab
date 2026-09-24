@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SauceStation
   sauceID: Mayonnaise
   maxStock: 200
-  timeToReload: 10
+  timeToReload: 5
   isBottle: 1
   currentStock: 0
   reloadFillImage: {fileID: 4469542577037516320}

@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SauceStation
   sauceID: Chili
   maxStock: 200
-  timeToReload: 10
+  timeToReload: 5
   isBottle: 0
   currentStock: 0
   reloadFillImage: {fileID: 4904476837331101916}

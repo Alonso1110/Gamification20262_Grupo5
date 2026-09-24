@@ -28,10 +28,7 @@ public class CuttingBoardDropZone : MonoBehaviour, IDropHandler, IPointerDownHan
                 dropCg.blocksRaycasts = false;
                 Destroy(dropped, 0.05f);
 
-                if (currentChickenOnBoard != null)
-                {
-                    Destroy(currentChickenOnBoard);
-                }
+                ClearChickenOnBoard();
 
                 GameObject prefabToUse = (wholeChickenPrefab != null) ? wholeChickenPrefab : ingredient.gameObject;
                 currentChickenOnBoard = Instantiate(prefabToUse, chickenSlot);
@@ -49,15 +46,37 @@ public class CuttingBoardDropZone : MonoBehaviour, IDropHandler, IPointerDownHan
                 CanvasGroup boardCg = currentChickenOnBoard.GetComponent<CanvasGroup>();
                 if (boardCg == null) boardCg = currentChickenOnBoard.AddComponent<CanvasGroup>();
                 boardCg.blocksRaycasts = false;
+
+                if (cuttingBoardUI != null)
+                {
+                    cuttingBoardUI.ResetToWholeChicken();
+                }
             }
         }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (currentChickenOnBoard != null && cuttingBoardUI != null)
+        if (currentChickenOnBoard != null && cuttingBoardUI != null && cuttingBoardUI.HasAnyPieceLeft())
         {
             cuttingBoardUI.OpenBoard();
+        }
+    }
+
+    public void ClearChickenOnBoard()
+    {
+        if (currentChickenOnBoard != null)
+        {
+            Destroy(currentChickenOnBoard);
+            currentChickenOnBoard = null;
+        }
+
+        if (chickenSlot != null)
+        {
+            foreach (Transform child in chickenSlot)
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1732710032857111685}
   - component: {fileID: 6321426526137796992}
   - component: {fileID: 2482988143808264304}
+  - component: {fileID: -5010963705200791718}
   m_Layer: 5
   m_Name: Burnt potatoes
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-5010963705200791718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057197577819357656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f532e0e59f4ff7840bf629b8c75cde89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ingredient
+  ingredientID: burnt_potatoes

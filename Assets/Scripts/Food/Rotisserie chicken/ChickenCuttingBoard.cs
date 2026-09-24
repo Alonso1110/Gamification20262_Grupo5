@@ -26,11 +26,17 @@ public class ChickenCuttingBoard : MonoBehaviour
     [SerializeField] private GameObject quarterBreastRightPrefab;
     [SerializeField] private GameObject quarterLegRightPrefab;
 
+    [Header("References")]
+    [SerializeField] private CuttingBoardDropZone dropZone;
+
     private Canvas mainCanvas;
 
     private void Awake()
     {
         mainCanvas = GetComponentInParent<Canvas>();
+
+        if (dropZone == null)
+            dropZone = FindAnyObjectByType<CuttingBoardDropZone>();
 
         if (closeButton != null)
             closeButton.onClick.AddListener(CloseBoard);
@@ -39,10 +45,19 @@ public class ChickenCuttingBoard : MonoBehaviour
             cuttingWindowPanel.SetActive(false);
     }
 
+    public void ResetToWholeChicken()
+    {
+        if (wholeChickenUI) wholeChickenUI.SetActive(true);
+        if (halfLeftUI) halfLeftUI.SetActive(false);
+        if (halfRightUI) halfRightUI.SetActive(false);
+        if (quarterBreastLeftUI) quarterBreastLeftUI.SetActive(false);
+        if (quarterLegLeftUI) quarterLegLeftUI.SetActive(false);
+        if (quarterBreastRightUI) quarterBreastRightUI.SetActive(false);
+        if (quarterLegRightUI) quarterLegRightUI.SetActive(false);
+    }
+
     public void OpenBoard()
     {
-        ResetVisuals();
-
         if (cuttingWindowPanel != null)
             cuttingWindowPanel.SetActive(true);
     }
@@ -53,15 +68,15 @@ public class ChickenCuttingBoard : MonoBehaviour
             cuttingWindowPanel.SetActive(false);
     }
 
-    private void ResetVisuals()
+    public bool HasAnyPieceLeft()
     {
-        if (wholeChickenUI) wholeChickenUI.SetActive(true);
-        if (halfLeftUI) halfLeftUI.SetActive(false);
-        if (halfRightUI) halfRightUI.SetActive(false);
-        if (quarterBreastLeftUI) quarterBreastLeftUI.SetActive(false);
-        if (quarterLegLeftUI) quarterLegLeftUI.SetActive(false);
-        if (quarterBreastRightUI) quarterBreastRightUI.SetActive(false);
-        if (quarterLegRightUI) quarterLegRightUI.SetActive(false);
+        return (wholeChickenUI != null && wholeChickenUI.activeSelf) ||
+               (halfLeftUI != null && halfLeftUI.activeSelf) ||
+               (halfRightUI != null && halfRightUI.activeSelf) ||
+               (quarterBreastLeftUI != null && quarterBreastLeftUI.activeSelf) ||
+               (quarterLegLeftUI != null && quarterLegLeftUI.activeSelf) ||
+               (quarterBreastRightUI != null && quarterBreastRightUI.activeSelf) ||
+               (quarterLegRightUI != null && quarterLegRightUI.activeSelf);
     }
 
     public void PerformVerticalCut(Vector2 localPosition)
@@ -125,6 +140,14 @@ public class ChickenCuttingBoard : MonoBehaviour
                 uiPiece.SetActive(false);
                 SpawnPieceAtPointer(prefab, eventData);
                 CloseBoard();
+
+                if (dropZone == null) dropZone = FindAnyObjectByType<CuttingBoardDropZone>();
+
+                if (!HasAnyPieceLeft() && dropZone != null)
+                {
+                    dropZone.ClearChickenOnBoard();
+                }
+
                 return true;
             }
         }

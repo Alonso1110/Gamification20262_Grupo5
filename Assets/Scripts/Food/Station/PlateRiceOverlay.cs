@@ -2,53 +2,47 @@ using UnityEngine;
 
 public class PlateRiceOverlay : MonoBehaviour
 {
-    [Header("Rice Slot on Plate")]
+    [Header("Slots")]
     [SerializeField] private RectTransform riceSlot;
-
-    public bool HasRice()
-    {
-        return riceSlot != null && riceSlot.childCount > 0;
-    }
+    [SerializeField] private RectTransform extraRiceSlot;
 
     public bool ServeRice(GameObject riceObject)
     {
-        if (HasRice())
+        if (riceSlot != null && riceSlot.childCount == 0)
         {
-            Debug.Log("El plato ya tiene arroz");
-            return false;
+            SetToSlot(riceObject, riceSlot);
+            return true;
         }
-
-        if (riceObject != null && riceSlot != null)
+        else if (extraRiceSlot != null && extraRiceSlot.childCount == 0)
         {
-            riceObject.transform.SetParent(riceSlot, false);
-
-            RectTransform rect = riceObject.GetComponent<RectTransform>();
-            if (rect != null)
-            {
-                rect.anchoredPosition = Vector2.zero;
-                rect.localScale = Vector3.one;
-            }
-
-            DraggableIngredient drag = riceObject.GetComponent<DraggableIngredient>();
-            if (drag != null)
-            {
-                drag.LockInPlace();
-            }
-
+            SetToSlot(riceObject, extraRiceSlot);
             return true;
         }
 
+        Debug.Log("Ya no cabe más arroz en este plato");
         return false;
+    }
+
+    private void SetToSlot(GameObject obj, RectTransform slot)
+    {
+        obj.transform.SetParent(slot, false);
+        RectTransform rect = obj.GetComponent<RectTransform>();
+        if (rect != null)
+        {
+            rect.anchoredPosition = Vector2.zero;
+            rect.localScale = Vector3.one;
+        }
+
+        DraggableIngredient drag = obj.GetComponent<DraggableIngredient>();
+        if (drag != null) drag.LockInPlace();
     }
 
     public void ClearRice()
     {
         if (riceSlot != null)
-        {
-            foreach (Transform child in riceSlot)
-            {
-                Destroy(child.gameObject);
-            }
-        }
+            foreach (Transform child in riceSlot) Destroy(child.gameObject);
+
+        if (extraRiceSlot != null)
+            foreach (Transform child in extraRiceSlot) Destroy(child.gameObject);
     }
 }

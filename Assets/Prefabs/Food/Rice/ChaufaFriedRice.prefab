@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6274111055728272897, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: ingredientID
-      value: ChaufaFriedRice
+      value: chaufa_fried_rice
       objectReference: {fileID: 0}
     - target: {fileID: 1468855040090118064, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_Color.b
