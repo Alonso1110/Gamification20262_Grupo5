@@ -10,8 +10,8 @@ public class SauceBottle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField] private float flowRate = 0.5f;
 
     [Header("Tilt Effect")]
-    [SerializeField] private float tiltAngle = -45f;
-    [SerializeField] private float tiltSpeed = 12f;
+    [SerializeField] private float tiltAngle = -135f;
+    [SerializeField] private float tiltSpeed = 15f;
 
     private Canvas mainCanvas;
     private RectTransform rectTransform;
@@ -135,11 +135,17 @@ public class SauceBottle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         bool foundPlate = false;
 
+        Camera cam = (mainCanvas != null && mainCanvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            ? null
+            : (mainCanvas != null ? mainCanvas.worldCamera : Camera.main);
+
         foreach (var plate in PlateSauceOverlay.AllPlates)
         {
             if (plate == null || !plate.gameObject.activeInHierarchy) continue;
 
-            if (RectTransformsOverlap(rectTransform, plate.GetComponent<RectTransform>()))
+            RectTransform plateRect = plate.GetComponent<RectTransform>();
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(plateRect, eventData.position, cam))
             {
                 foundPlate = true;
 
@@ -154,19 +160,5 @@ public class SauceBottle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
 
         isOverPlate = foundPlate;
-    }
-
-    private bool RectTransformsOverlap(RectTransform a, RectTransform b)
-    {
-        Vector3[] aCorners = new Vector3[4];
-        Vector3[] bCorners = new Vector3[4];
-
-        a.GetWorldCorners(aCorners);
-        b.GetWorldCorners(bCorners);
-
-        Rect aRect = new Rect(aCorners[0].x, aCorners[0].y, aCorners[2].x - aCorners[0].x, aCorners[2].y - aCorners[0].y);
-        Rect bRect = new Rect(bCorners[0].x, bCorners[0].y, bCorners[2].x - bCorners[0].x, bCorners[2].y - bCorners[0].y);
-
-        return aRect.Overlaps(bRect);
     }
 }

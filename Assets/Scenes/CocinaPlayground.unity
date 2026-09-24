@@ -998,10 +998,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 920942896}
     m_Modifications:
+    - target: {fileID: 2663812434154661474, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
+      propertyPath: tiltAngle
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+      objectReference: {fileID: 21300000, guid: 9ba5c03887e05634a826ea2a4c6e9589, type: 3}
     - target: {fileID: 3395498370742570974, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.b
       value: 0.79622644
@@ -1040,11 +1044,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1106,6 +1110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cream 02
       objectReference: {fileID: 0}
+    - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ba5c03887e05634a826ea2a4c6e9589, type: 3}
     - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.b
       value: 0.79607844
@@ -1787,7 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 0
+    m_Left: -8
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -2656,10 +2664,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 305242357}
     m_Modifications:
+    - target: {fileID: 2663812434154661474, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: tiltAngle
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+      objectReference: {fileID: 21300000, guid: 9ba5c03887e05634a826ea2a4c6e9589, type: 3}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2686,11 +2698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2752,6 +2764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cream 01
       objectReference: {fileID: 0}
+    - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ba5c03887e05634a826ea2a4c6e9589, type: 3}
     - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.b
       value: 0.93207544
@@ -3280,17 +3296,25 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1911238961948137389, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663812434154661474, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: tiltAngle
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+      objectReference: {fileID: 21300000, guid: d324f7c01cb24904ab0f351d6bc680db, type: 3}
     - target: {fileID: 3395498370742570974, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.b
-      value: 0.20943397
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.g
-      value: 0.20943397
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.r
@@ -3322,11 +3346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3389,15 +3413,23 @@ PrefabInstance:
       value: Cream 01
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d324f7c01cb24904ab0f351d6bc680db, type: 3}
+    - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.b
-      value: 0.20784314
+      value: 0.8509433
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.g
-      value: 0.20784314
+      value: 0.8509433
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103780549753649438, guid: cbe8f9889a211674b971d538e4d7facb, type: 3}
+      propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4689,7 +4721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc25d5a21be67f4fb5742580de5771e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChickenOvenStation
-  wholeChickenPrefab: {fileID: 9166784708884010070, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
+  wholeChickenPrefab: {fileID: 4417869540235543839, guid: 838d6e9992c025648936dd85c9bca4df, type: 3}
 --- !u!1 &1041214917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,7 +5446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 24}
   m_SizeDelta: {x: 100, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1249576626
@@ -7441,10 +7473,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 305242357}
     m_Modifications:
+    - target: {fileID: 2663812434154661474, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
+      propertyPath: tiltAngle
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 3395498370742570974, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+      objectReference: {fileID: 21300000, guid: b3b4c64ace56dca4fad5fc7e8441b086, type: 3}
     - target: {fileID: 3395498370742570974, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.a
       value: 0.7058824
@@ -7487,11 +7523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5159792900191932206, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7554,12 +7590,16 @@ PrefabInstance:
       value: Cream 02
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3b4c64ace56dca4fad5fc7e8441b086, type: 3}
+    - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.b
-      value: 0.3137255
+      value: 0.84339625
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.g
-      value: 0.92156863
+      value: 0.9821024
       objectReference: {fileID: 0}
     - target: {fileID: 7103780549753649438, guid: a030101a0d782644084d8c7d3b6175c5, type: 3}
       propertyPath: m_Color.r
@@ -7834,7 +7874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CuttingBoardDropZone
   cuttingBoardUI: {fileID: 534000086}
   chickenSlot: {fileID: 1224544254}
-  wholeChickenPrefab: {fileID: 9166784708884010070, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
+  wholeChickenPrefab: {fileID: 4417869540235543839, guid: 838d6e9992c025648936dd85c9bca4df, type: 3}
 --- !u!1001 &1880279335
 PrefabInstance:
   m_ObjectHideFlags: 0
