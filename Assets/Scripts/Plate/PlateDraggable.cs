@@ -23,7 +23,8 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.7f;
+        DragLayer.Raise(gameObject);
+        canvasGroup.alpha = 0.8f;
         canvasGroup.blocksRaycasts = false;
 
         if (TryGetComponent<ConveyorPlate>(out ConveyorPlate conveyor))
@@ -43,6 +44,7 @@ public class PlateDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnEndDrag(PointerEventData eventData)
     {
         if (gameObject == null || !gameObject.activeInHierarchy) return;
+        DragLayer.Restore(gameObject);
 
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;

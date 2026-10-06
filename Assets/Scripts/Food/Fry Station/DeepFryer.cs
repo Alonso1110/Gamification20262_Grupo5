@@ -104,6 +104,8 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         if (isBasketDown || currentState == FryState.Empty) return;
 
         isDragging = true;
+        DragLayer.Raise(basketRectTransform.gameObject);
+
         canvasGroup.blocksRaycasts = false;
         originalAnchoredPos = basketRectTransform.anchoredPosition;
     }
@@ -118,6 +120,7 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!isDragging) return;
+        DragLayer.Restore(basketRectTransform.gameObject);
 
         canvasGroup.blocksRaycasts = true;
 

@@ -19,7 +19,8 @@ public class DraggableIngredient : MonoBehaviour, IBeginDragHandler, IDragHandle
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (isLocked) return;
-        canvasGroup.alpha = 0.6f;
+        DragLayer.Raise(gameObject);
+        canvasGroup.alpha = 0.8f;
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -32,6 +33,7 @@ public class DraggableIngredient : MonoBehaviour, IBeginDragHandler, IDragHandle
     public void OnEndDrag(PointerEventData eventData)
     {
         if (isLocked) return;
+        DragLayer.Restore(gameObject);
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
 
@@ -44,6 +46,7 @@ public class DraggableIngredient : MonoBehaviour, IBeginDragHandler, IDragHandle
     public void LockInPlace()
     {
         isLocked = true;
+        DragLayer.Restore(gameObject);
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 1.0f;

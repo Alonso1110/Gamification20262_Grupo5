@@ -19,20 +19,19 @@ public class OrderBoardUI : MonoBehaviour
 
         foreach (Transform child in ticketContainer)
         {
+            child.gameObject.SetActive(false);
             Destroy(child.gameObject);
         }
 
         if (OrderManager.Instance != null)
         {
             int orderNumber = 1;
-            foreach (RecipeSO recipe in OrderManager.Instance.activeOrders)
+            foreach (Order order in OrderManager.Instance.activeOrders)
             {
                 GameObject ticketObj = Instantiate(orderTicketPrefab, ticketContainer);
                 OrderTicketUI ticketUI = ticketObj.GetComponent<OrderTicketUI>();
                 if (ticketUI != null)
-                {
-                    ticketUI.Setup(recipe, orderNumber);
-                }
+                    ticketUI.Setup(order, orderNumber);
                 orderNumber++;
             }
         }
