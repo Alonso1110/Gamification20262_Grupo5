@@ -15,3 +15,5 @@ MonoBehaviour:
   ingredientID: mustard
   ingredientName: Mostaza
   icon: {fileID: 0}
+  sellPrice: 2
+  scorePoints: 5

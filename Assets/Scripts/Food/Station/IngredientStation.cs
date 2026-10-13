@@ -4,78 +4,74 @@ using UnityEngine.UI;
 
 public class IngredientStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [Header("Stock Configuration")]
+    [Header("Stock")]
     [SerializeField] private int maxStock = 10;
-    [SerializeField] private float timeToReload = 10f;
 
-    private int currentStock;
-    private bool isHoldingToReload = false;
-    private float holdTimer = 0f;
+    [Header("Reload")]
+    [SerializeField] private float fullReloadTime = 10f;
+    [SerializeField] private int fullReloadCost = 6;
 
-    [Header("Visual References")]
+    [Header("Visuals")]
     [SerializeField] private Image reloadFillImage;
     [SerializeField] private Image foodOverlayImage;
+
+    private int currentStock;
+    private bool isHoldingToReload;
+    private float holdTimer;
+    private float reloadDuration;
+    private int reloadCost;
 
     private void Start()
     {
         if (foodOverlayImage == null)
-        {
             foodOverlayImage = GetComponent<Image>();
-        }
 
         currentStock = maxStock;
         UpdateVisuals();
-
-        if (reloadFillImage != null)
-        {
-            reloadFillImage.fillAmount = 0f;
-            reloadFillImage.gameObject.SetActive(false);
-        }
+        HideReloadBar();
     }
 
     private void Update()
     {
-        if (isHoldingToReload && currentStock < maxStock)
+        if (!isHoldingToReload) return;
+
+        holdTimer += Time.deltaTime;
+
+        if (reloadFillImage != null)
         {
-            holdTimer += Time.deltaTime;
-            float progress = holdTimer / timeToReload;
+            if (!reloadFillImage.gameObject.activeSelf)
+                reloadFillImage.gameObject.SetActive(true);
 
-            if (reloadFillImage != null)
-            {
-                if (!reloadFillImage.gameObject.activeSelf)
-                    reloadFillImage.gameObject.SetActive(true);
-
-                reloadFillImage.fillAmount = progress;
-            }
-
-            if (holdTimer >= timeToReload)
-            {
-                ReloadStation();
-            }
+            reloadFillImage.fillAmount = Mathf.Clamp01(holdTimer / reloadDuration);
         }
+
+        if (holdTimer >= reloadDuration)
+            ReloadStation();
     }
 
     public bool TryTakeIngredient()
     {
-        if (currentStock > 0)
-        {
-            currentStock--;
-            UpdateVisuals();
-            return true;
-        }
-        else
-        {
-            Debug.Log("Sin stock");
-            return false;
-        }
+        if (currentStock <= 0) return false;
+
+        currentStock--;
+        UpdateVisuals();
+        return true;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (currentStock < maxStock)
-        {
-            isHoldingToReload = true;
-        }
+        if (currentStock >= maxStock) return;
+
+        float missing = (float)(maxStock - currentStock) / maxStock;
+
+        reloadDuration = Mathf.Max(0.5f, fullReloadTime * missing);
+        reloadCost = fullReloadCost <= 0 ? 0 : Mathf.Max(1, Mathf.CeilToInt(fullReloadCost * missing));
+
+        if (GameEconomy.Instance != null && !GameEconomy.Instance.CanAfford(reloadCost))
+            return;
+
+        holdTimer = 0f;
+        isHoldingToReload = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -85,33 +81,38 @@ public class IngredientStation : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
     private void ReloadStation()
     {
+        if (GameEconomy.Instance != null && !GameEconomy.Instance.TrySpend(reloadCost))
+        {
+            ResetHold();
+            return;
+        }
+
         currentStock = maxStock;
         UpdateVisuals();
         ResetHold();
-        Debug.Log("Estación recargada al 100%");
     }
 
     private void ResetHold()
     {
         isHoldingToReload = false;
         holdTimer = 0f;
+        HideReloadBar();
+    }
 
-        if (reloadFillImage != null)
-        {
-            reloadFillImage.fillAmount = 0f;
-            reloadFillImage.gameObject.SetActive(false);
-        }
+    private void HideReloadBar()
+    {
+        if (reloadFillImage == null) return;
+
+        reloadFillImage.fillAmount = 0f;
+        reloadFillImage.gameObject.SetActive(false);
     }
 
     private void UpdateVisuals()
     {
-        if (foodOverlayImage != null)
-        {
-            Color c = foodOverlayImage.color;
+        if (foodOverlayImage == null) return;
 
-            c.a = (float)currentStock / maxStock;
-
-            foodOverlayImage.color = c;
-        }
+        Color c = foodOverlayImage.color;
+        c.a = (float)currentStock / maxStock;
+        foodOverlayImage.color = c;
     }
 }

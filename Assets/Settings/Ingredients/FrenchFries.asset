@@ -15,3 +15,5 @@ MonoBehaviour:
   ingredientID: french_fries
   ingredientName: Papas Fritas
   icon: {fileID: 0}
+  sellPrice: 4
+  scorePoints: 10

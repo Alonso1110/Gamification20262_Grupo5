@@ -7,14 +7,19 @@ public class GameEconomy : MonoBehaviour
 
     [Header("Money")]
     [SerializeField] private int startingMoney = 50;
-    [SerializeField] private int payPerItem = 10;
     [SerializeField] private int expiredPenalty = 0;
 
-    [Header("Tip zones")]
+    [Header("Speed Zones")]
     [SerializeField, Range(0f, 1f)] private float greenZone = 0.6f;
     [SerializeField, Range(0f, 1f)] private float yellowZone = 0.3f;
-    [SerializeField] private float greenTipPercent = 0.5f;
-    [SerializeField] private float yellowTipPercent = 0.2f;
+
+    [Header("Tips")]
+    [SerializeField] private float greenTip = 0.5f;
+    [SerializeField] private float yellowTip = 0.2f;
+
+    [Header("Score Bonus")]
+    [SerializeField] private float greenBonus = 0.5f;
+    [SerializeField] private float yellowBonus = 0.2f;
 
     public int Money { get; private set; }
     public int Score { get; private set; }
@@ -52,17 +57,26 @@ public class GameEconomy : MonoBehaviour
 
     private void HandleCompleted(Order order)
     {
-        int items = order.recipe.requiredIngredients.Count + order.recipe.requiredSauces.Count;
-        int basePay = items * payPerItem;
+        int basePay = 0;
+        int points = 0;
+
+        foreach (var ing in order.recipe.requiredIngredients)
+            if (ing != null) { basePay += ing.sellPrice; points += ing.scorePoints; }
+        foreach (var sauce in order.recipe.requiredSauces)
+            if (sauce != null) { basePay += sauce.sellPrice; points += sauce.scorePoints; }
 
         float n = order.Normalized;
-        float tipPercent = n >= greenZone ? greenTipPercent
-                         : n >= yellowZone ? yellowTipPercent
-                         : 0f;
+        bool green = n >= greenZone;
+        bool yellow = !green && n >= yellowZone;
+
+        float tipPercent = green ? greenTip : yellow ? yellowTip : 0f;
+        float bonusPercent = green ? greenBonus : yellow ? yellowBonus : 0f;
+
         int tip = Mathf.RoundToInt(basePay * tipPercent);
+        int bonus = Mathf.RoundToInt(points * bonusPercent);
 
         Money += basePay + tip;
-        Score += (basePay + tip) * 10;
+        Score += points + bonus;
 
         OnMoneyChanged?.Invoke(Money);
         OnScoreChanged?.Invoke(Score);

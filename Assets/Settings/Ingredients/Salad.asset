@@ -15,3 +15,4 @@ MonoBehaviour:
   ingredientID: salad
   ingredientName: Ensalada
   icon: {fileID: 0}
+  sellPrice: 4

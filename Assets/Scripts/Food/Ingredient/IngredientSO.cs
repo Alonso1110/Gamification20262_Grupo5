@@ -7,4 +7,8 @@ public class IngredientSO : ScriptableObject
     public string ingredientID;
     public string ingredientName;
     public Sprite icon;
+
+    [Header("Economy")]
+    public int sellPrice = 8;
+    public int scorePoints = 10;
 }

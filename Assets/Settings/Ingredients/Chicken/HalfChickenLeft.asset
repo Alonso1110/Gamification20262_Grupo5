@@ -15,3 +15,5 @@ MonoBehaviour:
   ingredientID: half_chicken_left
   ingredientName: 1/2 Pollo
   icon: {fileID: 0}
+  sellPrice: 20
+  scorePoints: 20

@@ -15,3 +15,5 @@ MonoBehaviour:
   ingredientID: whole_chicken
   ingredientName: 1 Pollo Entero
   icon: {fileID: 0}
+  sellPrice: 30
+  scorePoints: 30

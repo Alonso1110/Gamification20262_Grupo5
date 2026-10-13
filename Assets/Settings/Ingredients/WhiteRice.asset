@@ -15,3 +15,4 @@ MonoBehaviour:
   ingredientID: white_rice
   ingredientName: Arroz Blanco
   icon: {fileID: 0}
+  sellPrice: 4

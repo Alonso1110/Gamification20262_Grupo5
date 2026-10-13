@@ -7,34 +7,46 @@ public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance { get; private set; }
 
-    [Header("Procedural pools")]
+    [Header("Required")]
+    [SerializeField] private IngredientSO fries;
+
+    [Header("Pools")]
     [SerializeField] private List<IngredientSO> mainPieces = new List<IngredientSO>();
     [SerializeField] private List<IngredientSO> sides = new List<IngredientSO>();
     [SerializeField] private List<IngredientSO> sauces = new List<IngredientSO>();
 
-    [Header("Generation rules")]
-    [SerializeField] private int maxSauces = 2;
+    [Header("Rules")]
     [SerializeField] private int maxSides = 2;
+    [SerializeField] private int maxSauces = 2;
+    [SerializeField] private int maxItemsPerOrder = 5;
 
     [Header("Timing")]
-    [SerializeField] private int initialOrders = 2;
-    [SerializeField] private int maxOrdersOnBoard = 4;
     [SerializeField] private float spawnInterval = 12f;
     [SerializeField] private float baseTime = 40f;
     [SerializeField] private float timePerItem = 15f;
-
-    [SerializeField] private int minOrdersOnBoard = 1;
     [SerializeField] private float refillDelay = 2f;
 
-    private float refillTimer;
+    [Header("Board")]
+    [SerializeField] private int initialOrders = 2;
+    [SerializeField] private int minOrdersOnBoard = 1;
+    [SerializeField] private int maxOrdersOnBoard = 4;
 
-    [Header("Active Orders on the Board")]
+    [Header("Active")]
     public List<Order> activeOrders = new List<Order>();
 
     public event Action<Order> OnOrderCompleted;
     public event Action<Order> OnOrderExpired;
 
+    [Header("Difficulty")]
+    [SerializeField] private float rampDuration = 300f;
+    [SerializeField] private float minSpawnInterval = 5f;
+    [SerializeField] private float minTimeMultiplier = 0.6f;
+
+    private float elapsed;
+    private float Ramp => Mathf.Clamp01(elapsed / rampDuration);
+
     private float spawnTimer;
+    private float refillTimer;
 
     private void Awake()
     {
@@ -47,10 +59,20 @@ public class OrderManager : MonoBehaviour
         for (int i = 0; i < initialOrders; i++) GenerateNewOrder();
     }
 
+    private void OnValidate()
+    {
+        maxItemsPerOrder = Mathf.Clamp(maxItemsPerOrder, 2, 5);
+        maxOrdersOnBoard = Mathf.Clamp(maxOrdersOnBoard, 1, 4);
+        minOrdersOnBoard = Mathf.Clamp(minOrdersOnBoard, 0, maxOrdersOnBoard);
+        initialOrders = Mathf.Clamp(initialOrders, 0, maxOrdersOnBoard);
+    }
+
     private void Update()
     {
+        elapsed += Time.deltaTime;
+
         spawnTimer += Time.deltaTime;
-        if (spawnTimer >= spawnInterval)
+        if (spawnTimer >= Mathf.Lerp(spawnInterval, minSpawnInterval, Ramp))
         {
             spawnTimer = 0f;
             GenerateNewOrder();
@@ -89,12 +111,6 @@ public class OrderManager : MonoBehaviour
             OrderBoardUI.Instance.UpdateBoard();
     }
 
-    private void OnValidate()
-    {
-        maxOrdersOnBoard = Mathf.Clamp(maxOrdersOnBoard, 1, 4);
-        minOrdersOnBoard = Mathf.Clamp(minOrdersOnBoard, 0, maxOrdersOnBoard);
-        initialOrders = Mathf.Clamp(initialOrders, 0, maxOrdersOnBoard);
-    }
     public void GenerateNewOrder()
     {
         if (activeOrders.Count >= maxOrdersOnBoard) return;
@@ -107,17 +123,15 @@ public class OrderManager : MonoBehaviour
 
         activeOrders.Add(new Order(recipe, time));
 
+        time *= Mathf.Lerp(1f, minTimeMultiplier, Ramp);
+
         if (OrderBoardUI.Instance != null)
             OrderBoardUI.Instance.UpdateBoard();
     }
 
     private RecipeSO BuildRandomRecipe()
     {
-        if (mainPieces.Count == 0)
-        {
-            Debug.LogWarning("OrderManager: la lista Main Pieces está vacía, no se pueden generar pedidos.");
-            return null;
-        }
+        if (mainPieces.Count == 0) return null;
 
         var recipe = ScriptableObject.CreateInstance<RecipeSO>();
         recipe.recipeID = "proc_" + Guid.NewGuid().ToString("N").Substring(0, 6);
@@ -126,11 +140,16 @@ public class OrderManager : MonoBehaviour
         recipe.requiredSauces = new List<IngredientSO>();
 
         recipe.requiredIngredients.Add(mainPieces[Random.Range(0, mainPieces.Count)]);
+        if (fries != null) recipe.requiredIngredients.Add(fries);
 
-        int sideCount = Mathf.Min(Random.Range(0, maxSides + 1), sides.Count);
-        recipe.requiredIngredients.AddRange(PickDistinct(sides, sideCount));
+        int slots = Mathf.Max(0, maxItemsPerOrder - recipe.requiredIngredients.Count);
 
-        int sauceCount = Mathf.Min(Random.Range(0, maxSauces + 1), sauces.Count);
+        var optionalSides = sides.FindAll(s => s != fries);
+        int sideCount = Mathf.Min(Random.Range(0, maxSides + 1), optionalSides.Count, slots);
+        recipe.requiredIngredients.AddRange(PickDistinct(optionalSides, sideCount));
+        slots -= sideCount;
+
+        int sauceCount = Mathf.Min(Random.Range(0, maxSauces + 1), sauces.Count, slots);
         recipe.requiredSauces.AddRange(PickDistinct(sauces, sauceCount));
 
         return recipe;
@@ -165,19 +184,14 @@ public class OrderManager : MonoBehaviour
         if (plateDraggable != null)
             plateDraggable.ClearPlate();
 
-        if (matched != null)
-        {
-            Debug.Log("PEDIDO CORRECTO");
-            activeOrders.Remove(matched);
-            OnOrderCompleted?.Invoke(matched);
+        if (matched == null) return false;
 
-            if (OrderBoardUI.Instance != null)
-                OrderBoardUI.Instance.UpdateBoard();
+        activeOrders.Remove(matched);
+        OnOrderCompleted?.Invoke(matched);
 
-            return true;
-        }
+        if (OrderBoardUI.Instance != null)
+            OrderBoardUI.Instance.UpdateBoard();
 
-        Debug.Log("ERROR DE ENTREGA");
-        return false;
+        return true;
     }
 }
