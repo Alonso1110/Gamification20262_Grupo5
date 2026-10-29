@@ -1,3 +1,5 @@
+
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderBoardUI : MonoBehaviour
@@ -9,8 +11,10 @@ public class OrderBoardUI : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
     public void UpdateBoard()
@@ -18,22 +22,29 @@ public class OrderBoardUI : MonoBehaviour
         if (ticketContainer == null || orderTicketPrefab == null) return;
 
         foreach (Transform child in ticketContainer)
-        {
-            child.gameObject.SetActive(false);
             Destroy(child.gameObject);
-        }
 
-        if (OrderManager.Instance != null)
+        List<Order> orders = null;
+
+        if (TutorialOrderManager.Instance != null)
+            orders = TutorialOrderManager.Instance.activeOrders;
+        else if (OrderManager.Instance != null)
+            orders = OrderManager.Instance.activeOrders;
+
+        if (orders == null) return;
+
+        int orderNumber = 1;
+
+        foreach (Order order in orders)
         {
-            int orderNumber = 1;
-            foreach (Order order in OrderManager.Instance.activeOrders)
-            {
-                GameObject ticketObj = Instantiate(orderTicketPrefab, ticketContainer);
-                OrderTicketUI ticketUI = ticketObj.GetComponent<OrderTicketUI>();
-                if (ticketUI != null)
-                    ticketUI.Setup(order, orderNumber);
-                orderNumber++;
-            }
+            GameObject ticketObj = Instantiate(orderTicketPrefab, ticketContainer);
+
+            OrderTicketUI ticketUI = ticketObj.GetComponent<OrderTicketUI>();
+
+            if (ticketUI != null)
+                ticketUI.Setup(order, orderNumber);
+
+            orderNumber++;
         }
     }
 }

@@ -60,6 +60,9 @@ public class ChickenCuttingBoard : MonoBehaviour
     {
         if (cuttingWindowPanel != null)
             cuttingWindowPanel.SetActive(true);
+
+        if (TutorialManager.Instance != null)
+            TutorialManager.Instance.BoardOpened();
     }
 
     public void CloseBoard()
@@ -84,8 +87,12 @@ public class ChickenCuttingBoard : MonoBehaviour
         if (wholeChickenUI != null && wholeChickenUI.activeSelf)
         {
             wholeChickenUI.SetActive(false);
+
             if (halfLeftUI) halfLeftUI.SetActive(true);
             if (halfRightUI) halfRightUI.SetActive(true);
+
+            if (TutorialManager.Instance != null)
+                TutorialManager.Instance.VerticalCutCompleted();
         }
     }
 
@@ -107,6 +114,9 @@ public class ChickenCuttingBoard : MonoBehaviour
                 halfRightUI.SetActive(false);
                 if (quarterBreastRightUI) quarterBreastRightUI.SetActive(true);
                 if (quarterLegRightUI) quarterLegRightUI.SetActive(true);
+
+                if (TutorialManager.Instance != null)
+                    TutorialManager.Instance.HorizontalCutCompleted();
             }
         }
     }

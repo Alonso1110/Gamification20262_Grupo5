@@ -27,6 +27,9 @@ public class DraggableKnife : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         startAnchoredPosition = rectTransform.anchoredPosition;
         dragStartPosition = eventData.position;
         isCutting = false;
+
+        if (TutorialManager.Instance != null)
+            TutorialManager.Instance.KnifeDragStarted();
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 6a262f5ab9ec1464f9982a195c8cd621
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6707928277334497634
+    second: nueva_cocina_0
+  - first:
+      213: -8175121370756239278
+    second: nueva_cocina_1
+  - first:
+      213: 4703082219912737382
+    second: nueva_cocina_2
+  - first:
+      213: -4611544931877204935
+    second: nueva_cocina_3
+  - first:
+      213: 5825593404165119301
+    second: nueva_cocina_4
+  - first:
+      213: 7818476711784193109
+    second: nueva_cocina_5
+  - first:
+      213: -5404018644544737617
+    second: nueva_cocina_6
+  - first:
+      213: 4848685268923177332
+    second: nueva_cocina_7
+  - first:
+      213: 6786405323352905857
+    second: nueva_cocina_8
+  - first:
+      213: -8045831731250636304
+    second: nueva_cocina_9
+  - first:
+      213: 9145018063259230190
+    second: nueva_cocina_10
+  - first:
+      213: -2214351539609349395
+    second: nueva_cocina_11
+  - first:
+      213: 1449612917353672685
+    second: nueva_cocina_12
+  - first:
+      213: -7670703093627783540
+    second: nueva_cocina_13
+  - first:
+      213: -5217980183876596852
+    second: nueva_cocina_14
+  - first:
+      213: 1930577849098264221
+    second: nueva_cocina_15
+  - first:
+      213: 1491663920240587337
+    second: nueva_cocina_16
+  - first:
+      213: 2465740108872413196
+    second: nueva_cocina_17
+  - first:
+      213: 8012902577596480798
+    second: nueva_cocina_18
+  - first:
+      213: 7350103144843893636
+    second: nueva_cocina_19
+  - first:
+      213: 7324381989411838347
+    second: nueva_cocina_20
+  - first:
+      213: -6816916289279258106
+    second: nueva_cocina_21
+  - first:
+      213: 6886051444500531235
+    second: nueva_cocina_22
+  - first:
+      213: 535432888381446325
+    second: nueva_cocina_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nueva_cocina_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2160
+        width: 308
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26912556a39571d50800000000000000
+      internalID: 6707928277334497634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2095
+        width: 175
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250be5c4d622c8e80800000000000000
+      internalID: -8175121370756239278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1872
+        width: 308
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662ba5b6c54b44140800000000000000
+      internalID: 4703082219912737382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1731
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cc4b541508000c0800000000000000
+      internalID: -4611544931877204935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_4
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 1731
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dde15f55aa8d050800000000000000
+      internalID: 5825593404165119301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1731
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c9f82352fc08c60800000000000000
+      internalID: 7818476711784193109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1731
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faea25caca11105b0800000000000000
+      internalID: -5404018644544737617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_7
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1629
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479d5d9009df94340800000000000000
+      internalID: 4848685268923177332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_8
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1478
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18815488fa72e2e50800000000000000
+      internalID: 6786405323352905857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1332
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f95d384ba6775090800000000000000
+      internalID: -8045831731250636304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_10
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1217
+        width: 52
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eefd815e971a9ee70800000000000000
+      internalID: 9145018063259230190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1038
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2deb1c10b0541e0800000000000000
+      internalID: -2214351539609349395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_12
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 906
+        width: 49
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defeea8944f0e1410800000000000000
+      internalID: 1449612917353672685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 893
+        width: 49
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8673de6d203c8590800000000000000
+      internalID: -7670703093627783540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_14
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 749
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b02073ba20697b0800000000000000
+      internalID: -5217980183876596852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_15
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 606
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e5dba335acaca10800000000000000
+      internalID: 1930577849098264221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_16
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 606
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942f43aae6473b410800000000000000
+      internalID: 1491663920240587337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_17
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 435
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c00f5c1a091183220800000000000000
+      internalID: 2465740108872413196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_18
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 435
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d337da07c833f60800000000000000
+      internalID: 8012902577596480798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_19
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 435
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bd6e22edfc00660800000000000000
+      internalID: 7350103144843893636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_20
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 434
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b895926fc9e65a560800000000000000
+      internalID: 7324381989411838347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_21
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 336
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6029fe1a0c27561a0800000000000000
+      internalID: -6816916289279258106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_22
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 177
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328058e0e4b209f50800000000000000
+      internalID: 6886051444500531235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nueva_cocina_23
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 33
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b89909006d3e6700800000000000000
+      internalID: 535432888381446325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a44a42ae292b48d4b85b710125d98041
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      nueva_cocina_0: 6707928277334497634
+      nueva_cocina_1: -8175121370756239278
+      nueva_cocina_10: 9145018063259230190
+      nueva_cocina_11: -2214351539609349395
+      nueva_cocina_12: 1449612917353672685
+      nueva_cocina_13: -7670703093627783540
+      nueva_cocina_14: -5217980183876596852
+      nueva_cocina_15: 1930577849098264221
+      nueva_cocina_16: 1491663920240587337
+      nueva_cocina_17: 2465740108872413196
+      nueva_cocina_18: 8012902577596480798
+      nueva_cocina_19: 7350103144843893636
+      nueva_cocina_2: 4703082219912737382
+      nueva_cocina_20: 7324381989411838347
+      nueva_cocina_21: -6816916289279258106
+      nueva_cocina_22: 6886051444500531235
+      nueva_cocina_23: 535432888381446325
+      nueva_cocina_3: -4611544931877204935
+      nueva_cocina_4: 5825593404165119301
+      nueva_cocina_5: 7818476711784193109
+      nueva_cocina_6: -5404018644544737617
+      nueva_cocina_7: 4848685268923177332
+      nueva_cocina_8: 6786405323352905857
+      nueva_cocina_9: -8045831731250636304
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

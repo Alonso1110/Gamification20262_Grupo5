@@ -1,7 +1,9 @@
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableGlove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DraggableGlove : MonoBehaviour,
+    IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("References")]
     [SerializeField] private ChickenCuttingBoard cuttingBoard;
@@ -19,19 +21,27 @@ public class DraggableGlove : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnBeginDrag(PointerEventData eventData)
     {
         startAnchoredPosition = rectTransform.anchoredPosition;
+
+        if (TutorialManager.Instance != null)
+            TutorialManager.Instance.GloveDragStarted();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        rectTransform.anchoredPosition +=
+            eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         if (cuttingBoard != null)
         {
-            cuttingBoard.TryPickUpPiece(eventData);
+            bool pickedUp = cuttingBoard.TryPickUpPiece(eventData);
+
+            if (pickedUp && TutorialManager.Instance != null)
+                TutorialManager.Instance.GlovePickUpCompleted();
         }
+
         rectTransform.anchoredPosition = startAnchoredPosition;
     }
 }

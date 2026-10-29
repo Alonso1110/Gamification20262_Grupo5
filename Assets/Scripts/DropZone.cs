@@ -51,7 +51,14 @@ public class DropZone : MonoBehaviour, IDropHandler
             PlateChickenOverlay chickenOverlay = GetComponent<PlateChickenOverlay>();
             if (chickenOverlay != null)
             {
-                if (!chickenOverlay.ServeChicken(draggedIngredient.gameObject))
+                bool served = chickenOverlay.ServeChicken(draggedIngredient.gameObject);
+
+                if (served)
+                {
+                    if (TutorialManager.Instance != null)
+                        TutorialManager.Instance.ChickenPlacedOnPlate();
+                }
+                else
                 {
                     Destroy(draggedIngredient.gameObject);
                 }

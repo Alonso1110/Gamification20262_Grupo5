@@ -51,6 +51,12 @@ public class CuttingBoardDropZone : MonoBehaviour, IDropHandler, IPointerDownHan
                 {
                     cuttingBoardUI.ResetToWholeChicken();
                 }
+
+                if (TutorialManager.Instance != null)
+                {
+                    TutorialManager.Instance.ChickenPlacedOnBoard();
+                }
+
             }
         }
     }

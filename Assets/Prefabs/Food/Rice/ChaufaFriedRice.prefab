@@ -13,16 +13,20 @@ PrefabInstance:
       value: chaufa_fried_rice
       objectReference: {fileID: 0}
     - target: {fileID: 1468855040090118064, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00dbfd57d10987c479cc58aa47bb1c3f, type: 3}
+    - target: {fileID: 1468855040090118064, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_Color.b
-      value: 0.40000004
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468855040090118064, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_Color.g
-      value: 0.5294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1468855040090118064, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_Color.r
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2249096009464973514, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_Name
@@ -54,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7550482811203186338, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7550482811203186338, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7550482811203186338, guid: b71d65fe0b329d946aa903b5c3fe6d73, type: 3}
       propertyPath: m_LocalPosition.x

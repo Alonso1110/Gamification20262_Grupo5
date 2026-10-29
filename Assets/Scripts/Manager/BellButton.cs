@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,13 +23,23 @@ public class BellButton : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-        if (OrderManager.Instance != null)
+        if (TutorialOrderManager.Instance != null)
         {
-            OrderManager.Instance.DeliverPlate(associatedPlateValidator, associatedPlateDraggable);
+            TutorialOrderManager.Instance.DeliverPlate(
+                associatedPlateValidator,
+                associatedPlateDraggable
+            );
+        }
+        else if (OrderManager.Instance != null)
+        {
+            OrderManager.Instance.DeliverPlate(
+                associatedPlateValidator,
+                associatedPlateDraggable
+            );
         }
         else
         {
-            Debug.Log("No se encontró el OrderManager en la escena");
+            Debug.Log("No se encontró ningún administrador de pedidos.");
         }
     }
 }

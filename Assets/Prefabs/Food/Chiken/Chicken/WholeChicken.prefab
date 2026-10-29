@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3611021579989276476, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611021579989276476, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dce2dff5a7d9bf540a839651a1f2b983, type: 3}
+    - target: {fileID: 3611021579989276476, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611021579989276476, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611021579989276476, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6054985437498358112, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
       propertyPath: ingredientID
       value: whole_chicken
@@ -38,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753899197109838642, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6753899197109838642, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6753899197109838642, guid: 93a501c5f84b7124ba4d426f9f7c13b4, type: 3}
       propertyPath: m_LocalPosition.x

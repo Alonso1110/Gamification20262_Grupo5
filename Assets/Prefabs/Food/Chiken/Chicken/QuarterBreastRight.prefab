@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2392970825114244920, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ad36592a74b337048a7a6d0207685337, type: 3}
     - target: {fileID: 5129256496186112356, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
       propertyPath: ingredientID
       value: chicken_quarter_breast_right
@@ -38,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5662094826998211382, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5662094826998211382, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5662094826998211382, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
       propertyPath: m_LocalPosition.x

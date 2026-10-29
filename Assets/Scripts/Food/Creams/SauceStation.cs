@@ -25,6 +25,8 @@ public class SauceStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     private float reloadDuration;
     private int reloadCost;
 
+    private float stockBeforeReload;
+
     private void Start()
     {
         currentStock = maxStock;
@@ -37,13 +39,32 @@ public class SauceStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         if (!isHoldingToReload) return;
 
         holdTimer += Time.deltaTime;
+        float progress = Mathf.Clamp01(holdTimer / reloadDuration);
 
         if (reloadFillImage != null)
         {
             if (!reloadFillImage.gameObject.activeSelf)
                 reloadFillImage.gameObject.SetActive(true);
 
-            reloadFillImage.fillAmount = Mathf.Clamp01(holdTimer / reloadDuration);
+            reloadFillImage.fillAmount = progress;
+        }
+
+        if (liquidLevelImage != null)
+        {
+            float currentAnimatedStock = Mathf.Lerp(stockBeforeReload, maxStock, progress);
+            float ratio = currentAnimatedStock / maxStock;
+
+            if (isBottle)
+            {
+                liquidLevelImage.fillAmount = ratio;
+            }
+            else
+            {
+                liquidLevelImage.fillAmount = 1f;
+                Color c = liquidLevelImage.color;
+                c.a = ratio;
+                liquidLevelImage.color = c;
+            }
         }
 
         if (holdTimer >= reloadDuration)
@@ -73,6 +94,8 @@ public class SauceStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         if (GameEconomy.Instance != null && !GameEconomy.Instance.CanAfford(reloadCost))
             return;
 
+        stockBeforeReload = currentStock;
+
         holdTimer = 0f;
         isHoldingToReload = true;
     }
@@ -80,11 +103,13 @@ public class SauceStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     public void OnPointerUp(PointerEventData eventData)
     {
         ResetHold();
+        UpdateVisuals();
     }
 
     public void CancelReload()
     {
         ResetHold();
+        UpdateVisuals();
     }
 
     private void ReloadStation()
@@ -92,6 +117,7 @@ public class SauceStation : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         if (GameEconomy.Instance != null && !GameEconomy.Instance.TrySpend(reloadCost))
         {
             ResetHold();
+            UpdateVisuals();
             return;
         }
 

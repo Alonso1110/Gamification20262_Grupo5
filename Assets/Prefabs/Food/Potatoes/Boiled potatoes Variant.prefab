@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5605489513054598083, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605489513054598083, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7e1da69e447a2140bb8a1324d47e5a7, type: 3}
+    - target: {fileID: 5605489513054598083, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605489513054598083, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605489513054598083, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6528332563168639056, guid: 8c597b3c4c0caf44eb69d14ba9bbec3d, type: 3}
       propertyPath: ingredientID
       value: french_fries

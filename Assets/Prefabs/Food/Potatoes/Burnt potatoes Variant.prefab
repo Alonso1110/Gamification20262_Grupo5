@@ -88,6 +88,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2482988143808264304, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482988143808264304, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f7e1da69e447a2140bb8a1324d47e5a7, type: 3}
+    - target: {fileID: 2482988143808264304, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
+      propertyPath: m_Color.b
+      value: 0.25407612
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482988143808264304, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
+      propertyPath: m_Color.g
+      value: 0.62778777
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482988143808264304, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
+      propertyPath: m_Color.r
+      value: 0.735849
+      objectReference: {fileID: 0}
     - target: {fileID: 7057197577819357656, guid: a794cdd1d0f5ad74f9e0c32b452ae650, type: 3}
       propertyPath: m_Name
       value: Burnt potatoes Variant
