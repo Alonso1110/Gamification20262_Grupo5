@@ -62,11 +62,17 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
             {
                 currentState = FryState.Burnt;
                 UpdateVisuals();
+
+                if (TutorialFries.Instance != null)
+                    TutorialFries.Instance.FriesBurnt();
             }
             else if (timer >= timeToCook && currentState == FryState.Raw)
             {
                 currentState = FryState.Cooked;
                 UpdateVisuals();
+
+                if (TutorialFries.Instance != null)
+                    TutorialFries.Instance.FriesCooked();
             }
         }
     }
@@ -80,13 +86,26 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
             currentState = FryState.Raw;
             timer = 0f;
             UpdateVisuals();
+
+            if (TutorialFries.Instance != null)
+                TutorialFries.Instance.FriesAdded();
+
             Debug.Log("Papas crudas añadidas");
         }
         else
         {
             isBasketDown = !isBasketDown;
             MoveBasket(isBasketDown);
+
+            if (TutorialFries.Instance != null)
+            {
+                if (isBasketDown)
+                    TutorialFries.Instance.BasketLowered();
+                else if (currentState == FryState.Cooked)
+                    TutorialFries.Instance.BasketRaised();
+            }
         }
+
     }
 
     private void MoveBasket(bool goDown)
@@ -143,7 +162,10 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
                 {
                     if (friesOverlay.ServeFries(GetCurrentPrefab()))
                     {
-                        Debug.Log($"Papas ({currentState}) servidas en el plato");
+
+                        if (TutorialFries.Instance != null)
+                            TutorialFries.Instance.FriesServed();
+
                         EmptyBasket();
                     }
                 }
@@ -156,7 +178,6 @@ public class DeepFryer : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         {
             if (RectTransformsOverlap(basketRectTransform, trashCan.GetComponent<RectTransform>()))
             {
-                Debug.Log("Papas descartadas en el tacho de basura");
                 EmptyBasket();
                 return;
             }

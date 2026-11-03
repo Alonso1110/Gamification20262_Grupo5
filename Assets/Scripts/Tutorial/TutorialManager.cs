@@ -425,5 +425,8 @@ public class TutorialManager : MonoBehaviour
             StopCoroutine(guideRoutine);
 
         fingerIndicator.gameObject.SetActive(false);
+
+        if (TutorialFries.Instance != null)
+            TutorialFries.Instance.BeginTutorial();
     }
 }

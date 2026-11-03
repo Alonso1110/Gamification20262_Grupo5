@@ -27,9 +27,17 @@ public class DropZone : MonoBehaviour, IDropHandler
         else if (id.Contains("salad") || id.Contains("ensalada"))
         {
             PlateSaladOverlay saladOverlay = GetComponent<PlateSaladOverlay>();
+
             if (saladOverlay != null)
             {
-                if (!saladOverlay.ServeSalad(draggedIngredient.gameObject))
+                bool served = saladOverlay.ServeSalad(draggedIngredient.gameObject);
+
+                if (served)
+                {
+                    if (TutorialSalad.Instance != null)
+                        TutorialSalad.Instance.SaladServed();
+                }
+                else
                 {
                     Destroy(draggedIngredient.gameObject);
                 }
