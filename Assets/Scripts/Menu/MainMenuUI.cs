@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
@@ -13,43 +12,28 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        exitConfirmationPanel.SetActive(false);
-        optionsPanel.SetActive(false);
-        creditsPanel.SetActive(false);
+        if (exitConfirmationPanel) exitConfirmationPanel.SetActive(false);
+        if (optionsPanel) optionsPanel.SetActive(false);
+        if (creditsPanel) creditsPanel.SetActive(false);
     }
 
-    public void ShowExitConfirmation()
-    {
-        exitConfirmationPanel.SetActive(true);
-    }
+    public void ShowExitConfirmation() => exitConfirmationPanel.SetActive(true);
+    public void HideExitConfirmation() => exitConfirmationPanel.SetActive(false);
+    public void ConfirmExit() => sceneLoader.Quit();
 
-    public void HideExitConfirmation()
-    {
-        exitConfirmationPanel.SetActive(false);
-    }
-
-    public void ConfirmExit()
-    {
-        sceneLoader.Quit();
-    }
-
-    public void OpenOptions()
-    {
-        optionsPanel.SetActive(true);
-    }
-
+    public void OpenOptions() => optionsPanel.SetActive(true);
     public void CloseOptions()
     {
-        optionsPanel.SetActive(false);
+        UIWindowPopUp popUp = optionsPanel.GetComponent<UIWindowPopUp>();
+        if (popUp != null) popUp.CloseWindow();
+        else optionsPanel.SetActive(false);
     }
 
-    public void OpenCredits()
-    {
-        creditsPanel.SetActive(true);
-    }
-
+    public void OpenCredits() => creditsPanel.SetActive(true);
     public void CloseCredits()
     {
-        creditsPanel.SetActive(false);
+        UIWindowPopUp popUp = creditsPanel.GetComponent<UIWindowPopUp>();
+        if (popUp != null) popUp.CloseWindow();
+        else creditsPanel.SetActive(false);
     }
 }
