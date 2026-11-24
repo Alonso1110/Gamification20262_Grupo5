@@ -5798,13 +5798,13 @@ MonoBehaviour:
   quarterLegLeftUI: {fileID: 30425187}
   quarterBreastRightUI: {fileID: 1428620352}
   quarterLegRightUI: {fileID: 1220027625}
-  wholeChickenPrefab: {fileID: 9166784708884010070, guid: 80c5144125d1480499ec529876f8bcbb, type: 3}
+  wholeChickenPrefab: {fileID: 7941840423689556876, guid: f356ce834f9e1a442b2e065a0c423b99, type: 3}
   halfLeftPrefab: {fileID: 14507478871833961, guid: 0679ff1adf9ac9d4384d07435a2d5581, type: 3}
   halfRightPrefab: {fileID: 3600479253019824729, guid: dd2eaae3b5066e041b8b567447043b06, type: 3}
-  quarterBreastLeftPrefab: {fileID: 1592748150064374593, guid: 59f05eb65bce5f144a676311b36edbbe, type: 3}
-  quarterLegLeftPrefab: {fileID: 4977517723717063438, guid: ab8a0c41d4bd51e47803fb3bf91e9059, type: 3}
-  quarterBreastRightPrefab: {fileID: 978246570356650316, guid: 8d49379a26dea9e4a96a46460d736249, type: 3}
-  quarterLegRightPrefab: {fileID: 1729269746553582124, guid: a05870b296ae4704aa4d5675acfa8277, type: 3}
+  quarterBreastLeftPrefab: {fileID: 4677384294328119994, guid: 624602cc98627e547858c44e640dcf23, type: 3}
+  quarterLegLeftPrefab: {fileID: 4160808976797306974, guid: e237dbb58cb6daf4f8ae1f5d83218cf4, type: 3}
+  quarterBreastRightPrefab: {fileID: 8934107974155316066, guid: 4c4f7eacc65589b40b570724dbdff259, type: 3}
+  quarterLegRightPrefab: {fileID: 3133720686311618969, guid: 3bc6ad7356a3c354ebbb45830fa0691c, type: 3}
   dropZone: {fileID: 0}
 --- !u!114 &534000087
 MonoBehaviour:
