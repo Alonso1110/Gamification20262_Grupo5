@@ -2325,7 +2325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 191.72}
+  m_AnchoredPosition: {x: 0, y: 191.71997}
   m_SizeDelta: {x: 0, y: 383.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212081117
@@ -6415,7 +6415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -502.06, y: 36.63999}
+  m_AnchoredPosition: {x: -502.06006, y: 36.63999}
   m_SizeDelta: {x: 230.26, y: 73.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920942897
@@ -12780,7 +12780,7 @@ MonoBehaviour:
   chickenLeg: {fileID: 11400000, guid: 811a5dd95d4d88743b88b478cff28843, type: 2}
   fries: {fileID: 11400000, guid: bd3ca1648f93d2b4aa7c2955535a2b92, type: 2}
   salad: {fileID: 11400000, guid: d2786dee936754b40949be0935fc05bf, type: 2}
-  gameplaySceneName: KitchenPlayground
+  gameplaySceneName: Coffee
   waitBeforeChangingScene: 2
   activeOrders: []
 --- !u!4 &2015105190
