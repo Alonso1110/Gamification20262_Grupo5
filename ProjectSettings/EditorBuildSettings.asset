@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 83dc4c44d028ac841a10091e92bfcc3b
   - enabled: 1
+    path: Assets/Scenes/Coffee.unity
+    guid: f1e556461c4541f468fc65c927b2f7c8
+  - enabled: 1
     path: Assets/Scenes/KitchenPlayground.unity
     guid: c761ef4b8db4d6347b4121641e9a81bf
   m_configObjects:
